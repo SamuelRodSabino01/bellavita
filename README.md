@@ -130,7 +130,7 @@ bellavita/
 ├── index.html          # Estrutura principal da página
 ├── styles.css          # Estilos e animações
 ├── script.js           # Funcionalidades JavaScript
-└── README.md   # Documentação do projeto
+└── README.md           # Documentação do projeto
 ```
 
 ## 🎓 Conceitos de UX/UI Aplicados
