@@ -42,10 +42,15 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: transparent;
     z-index: 1000;
     transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .navbar {
@@ -62,12 +67,18 @@ body {
 }
 
 .logo h2 {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled .logo h2 {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-weight: 700;
-    font-size: 1.8rem;
+    color: transparent;
 }
 
 .nav-menu {
@@ -78,14 +89,24 @@ body {
 
 .nav-menu a {
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--white);
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
 }
 
+.header.scrolled .nav-menu a {
+    color: var(--text-dark);
+}
+
 .nav-menu a:hover {
+    color: var(--white);
+    opacity: 0.9;
+}
+
+.header.scrolled .nav-menu a:hover {
     color: var(--primary-color);
+    opacity: 1;
 }
 
 .nav-menu a::after {
@@ -95,12 +116,47 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--gradient-primary);
+    background: var(--white);
     transition: width 0.3s ease;
+}
+
+.header.scrolled .nav-menu a::after {
+    background: var(--gradient-primary);
 }
 
 .nav-menu a:hover::after {
     width: 100%;
+}
+
+/* Botão de destaque na navbar */
+.nav-menu a.btn-highlight {
+    background: var(--white);
+    color: var(--primary-color);
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.nav-menu a.btn-highlight:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    background: var(--white);
+    color: var(--primary-color);
+}
+
+.nav-menu a.btn-highlight::after {
+    display: none;
+}
+
+.header.scrolled .nav-menu a.btn-highlight {
+    background: var(--gradient-primary);
+    color: var(--white);
+}
+
+.header.scrolled .nav-menu a.btn-highlight:hover {
+    color: var(--white);
+    opacity: 0.9;
 }
 
 .hamburger {
@@ -112,15 +168,22 @@ body {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: var(--text-dark);
+    background: var(--white);
     margin: 3px 0;
     transition: 0.3s;
+}
+
+.header.scrolled .hamburger span {
+    background: var(--text-dark);
 }
 
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    background: var(--gradient-primary);
+    background: linear-gradient(135deg, rgba(248, 181, 193, 0.85) 0%, rgba(232, 213, 255, 0.85) 100%), url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     padding-top: 80px;
@@ -135,20 +198,33 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
-    opacity: 0.3;
+    background: rgba(0, 0, 0, 0.05);
+    z-index: 0;
 }
 
 .hero-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
     position: relative;
     z-index: 1;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .hero-content h1 {
@@ -172,36 +248,6 @@ body {
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 2.5rem;
     line-height: 1.8;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-placeholder {
-    width: 300px;
-    height: 300px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.hero-placeholder i {
-    font-size: 4rem;
-    color: var(--white);
-    opacity: 0.8;
 }
 
 /* Botões */
@@ -440,6 +486,13 @@ body {
     font-size: 4rem;
     color: var(--white);
     opacity: 0.8;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: var(--shadow-light);
 }
 
 /* CTA Section */
