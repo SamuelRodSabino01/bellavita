@@ -22,12 +22,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Efeito de scroll no header
+    // Efeito de scroll no header e troca de logo
+    const logoImg = document.querySelector('.logo img');
+    
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
+            if (logoImg) logoImg.src = 'assets/img/logo_png.png';
         } else {
             header.classList.remove('scrolled');
+            if (logoImg) logoImg.src = 'assets/img/logo_branco.png';
         }
     });
     
