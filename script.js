@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Adiciona classe de animação aos elementos
-    const animateElements = document.querySelectorAll('.service-card, .feature, .contact-item, .about-text, .about-image, .testimonial-card, .stat-item');
+    const animateElements = document.querySelectorAll('.service-card, .feature, .contact-item, .about-text, .about-image');
     animateElements.forEach(el => {
         el.classList.add('scroll-animate');
         observer.observe(el);
@@ -211,18 +211,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     }
     
-    // Efeito parallax suave no vídeo do hero (apenas o vídeo, não a seção)
+    // Efeito parallax suave no hero
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
-        const heroVideo = document.querySelector('.hero-video');
-        if (heroVideo) {
-            const rate = scrolled * 0.3;
-            heroVideo.style.transform = `translateY(${rate}px)`;
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            const rate = scrolled * -0.5;
+            hero.style.transform = `translateY(${rate}px)`;
         }
     });
     
-    // Contador animado para a seção de stats
-    function animateCounter(element, target, duration = 1800) {
+    // Contador animado (se houver números para mostrar)
+    function animateCounter(element, target, duration = 2000) {
         let start = 0;
         const increment = target / (duration / 16);
         
@@ -236,19 +236,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 16);
     }
-
-    // Inicializa contadores quando entram na viewport
-    const statNumbers = document.querySelectorAll('.stat-number');
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !entry.target.dataset.counted) {
-                entry.target.dataset.counted = 'true';
-                const target = parseInt(entry.target.dataset.target, 10);
-                animateCounter(entry.target, target);
-            }
-        });
-    }, { threshold: 0.5 });
-    statNumbers.forEach(el => counterObserver.observe(el));
     
     // Lazy loading para imagens (se houver)
     const images = document.querySelectorAll('img[data-src]');
@@ -281,51 +268,14 @@ document.addEventListener('DOMContentLoaded', function() {
         type();
     }
     
-    // Aplica efeito de typing preservando o span.highlight dentro do h1
+    // Aplica efeito de typing no título principal após um delay
     setTimeout(() => {
         const mainTitle = document.querySelector('.hero-content h1');
         if (mainTitle) {
-            // Preserve the original HTML (with <span>) instead of plain text
-            const originalHTML = mainTitle.innerHTML;
-            mainTitle.innerHTML = '';
-            let i = 0;
-            // Use a temp div to parse characters from HTML safely
-            const temp = document.createElement('div');
-            temp.innerHTML = originalHTML;
-            const nodes = Array.from(temp.childNodes);
-            let nodeIndex = 0;
-            let charIndex = 0;
-
-            function typeNextChar() {
-                if (nodeIndex >= nodes.length) return;
-                const node = nodes[nodeIndex];
-                if (node.nodeType === Node.TEXT_NODE) {
-                    const text = node.textContent;
-                    if (charIndex < text.length) {
-                        const existingTextNode = mainTitle.lastChild;
-                        if (existingTextNode && existingTextNode.nodeType === Node.TEXT_NODE && nodeIndex === nodes.indexOf(node)) {
-                            existingTextNode.textContent += text[charIndex];
-                        } else {
-                            mainTitle.appendChild(document.createTextNode(text[charIndex]));
-                        }
-                        charIndex++;
-                        setTimeout(typeNextChar, 60);
-                    } else {
-                        nodeIndex++;
-                        charIndex = 0;
-                        setTimeout(typeNextChar, 60);
-                    }
-                } else {
-                    // It's an element node (e.g. <span>) — append it fully at once
-                    mainTitle.appendChild(node.cloneNode(true));
-                    nodeIndex++;
-                    charIndex = 0;
-                    setTimeout(typeNextChar, 60);
-                }
-            }
-            typeNextChar();
+            const originalText = mainTitle.textContent;
+            typeWriter(mainTitle, originalText, 80);
         }
-    }, 500);
+    }, 1000);
     
     // Adiciona efeito hover aos botões
     const buttons = document.querySelectorAll('.btn');
