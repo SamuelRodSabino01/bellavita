@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Agende sua consulta na Bella Vita by Gabrieli Rodrigues. Escolha o procedimento, data e horário em apenas alguns passos. Atendimento personalizado com hora marcada." />
+  <meta name="robots" content="index, follow" />
+  <title>Agendar Consulta | Bella Vita by Gabrieli Rodrigues</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="agendamento-page">
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════════ -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="container header-inner">
+
+      <a href="index.html" class="header-logo" aria-label="Bella Vita — Página inicial">
+        <img src="assets/img2/logo/logo_png.png" alt="Bella Vita by Gabrieli Rodrigues" />
+      </a>
+
+      <nav class="header-nav" aria-label="Navegação principal">
+        <a href="index.html#procedimentos">Procedimentos</a>
+        <a href="index.html#sobre">Sobre</a>
+        <a href="index.html#depoimentos">Depoimentos</a>
+        <a href="agendar.html" aria-current="page">Agendamento</a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="nav-drawer"
+          aria-label="Abrir menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Overlay -->
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
+  <!-- Mobile Drawer -->
+  <nav
+    class="nav-drawer"
+    id="nav-drawer"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Menu de navegação"
+    aria-hidden="true"
+  >
+    <a href="index.html#procedimentos" id="drawer-procedimentos">Procedimentos</a>
+    <a href="index.html#sobre" id="drawer-sobre">Sobre</a>
+    <a href="index.html#depoimentos" id="drawer-depoimentos">Depoimentos</a>
+    <a href="agendar.html" id="drawer-agendar">Agendamento</a>
+    <div class="nav-drawer-footer">
+      <a href="index.html" class="btn btn-ghost" style="width:100%;" id="drawer-home-btn">
+        Voltar ao Site
+      </a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       HERO AGENDAMENTO
+  ══════════════════════════════════════════ -->
+  <div class="agendamento-hero">
+    <div class="container">
+      <span class="eyebrow">Agendamento Online</span>
+      <h1 class="display-md" style="margin-top:12px;">
+        Reserve sua sessão<br />
+        <em style="font-style:italic; color:var(--color-rosa-queimado)">com a Gabrieli.</em>
+      </h1>
+      <p class="body-sm" style="max-width:400px; margin: var(--spacing-sm) auto 0; text-align:center;">
+        Selecione o procedimento, a data e preencha seus dados. Em instantes, confirmamos via WhatsApp.
+      </p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       STEPPER PROGRESS
+  ══════════════════════════════════════════ -->
+  <div class="stepper-progress" id="stepper-progress" role="navigation" aria-label="Etapas do agendamento">
+    <div class="container">
+      <div class="stepper-track" id="stepper-track">
+
+        <div class="stepper-step is-active" id="step-indicator-1" aria-current="step">
+          <div class="stepper-dot" aria-hidden="true">1</div>
+          <span class="stepper-label">Procedimento</span>
+        </div>
+
+        <div class="stepper-step" id="step-indicator-2">
+          <div class="stepper-dot" aria-hidden="true">2</div>
+          <span class="stepper-label">Data & Hora</span>
+        </div>
+
+        <div class="stepper-step" id="step-indicator-3">
+          <div class="stepper-dot" aria-hidden="true">3</div>
+          <span class="stepper-label">Seus Dados</span>
+        </div>
+
+        <div class="stepper-step" id="step-indicator-4">
+          <div class="stepper-dot" aria-hidden="true">✦</div>
+          <span class="stepper-label">Confirmação</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       MAIN STEPPER CONTENT
+  ══════════════════════════════════════════ -->
+  <main id="main-content">
+    <div class="container" style="max-width: 780px;">
+
+      <!-- ────────────────────────────────
+           ETAPA 1 — Procedimento
+      ──────────────────────────────── -->
+      <section
+        class="step-content is-active"
+        id="step-1"
+        aria-labelledby="step1-title"
+        role="tabpanel"
+      >
+        <h2 class="step-title" id="step1-title">Qual procedimento deseja?</h2>
+        <p class="step-subtitle">Selecione um dos nossos protocolos especializados.</p>
+
+        <div class="proc-select-grid" id="proc-select-grid" role="group" aria-label="Procedimentos disponíveis">
+
+          <div
+            class="proc-select-card"
+            role="radio"
+            aria-checked="false"
+            tabindex="0"
+            data-proc="Limpeza de Pele Profunda"
+            data-category="Facial"
+            data-duration="60 minutos"
+            data-icon="🌿"
+            id="proc-limpeza"
+          >
+            <div class="proc-select-check" aria-hidden="true">✓</div>
+            <div class="proc-select-icon" aria-hidden="true">🌿</div>
+            <div class="proc-select-name">Limpeza de Pele Profunda</div>
+            <div class="proc-select-meta">
+              <span class="badge badge-rose">Facial</span>
+              <span class="badge badge-gold">60 min</span>
+            </div>
+          </div>
+
+          <div
+            class="proc-select-card"
+            role="radio"
+            aria-checked="false"
+            tabindex="0"
+            data-proc="Hidratação Facial"
+            data-category="Facial"
+            data-duration="45 minutos"
+            data-icon="💧"
+            id="proc-hidratacao"
+          >
+            <div class="proc-select-check" aria-hidden="true">✓</div>
+            <div class="proc-select-icon" aria-hidden="true">💧</div>
+            <div class="proc-select-name">Hidratação Facial</div>
+            <div class="proc-select-meta">
+              <span class="badge badge-rose">Facial</span>
+              <span class="badge badge-gold">45 min</span>
+            </div>
+          </div>
+
+          <div
+            class="proc-select-card"
+            role="radio"
+            aria-checked="false"
+            tabindex="0"
+            data-proc="Peeling Químico"
+            data-category="Facial"
+            data-duration="50 minutos"
+            data-icon="✨"
+            id="proc-peeling"
+          >
+            <div class="proc-select-check" aria-hidden="true">✓</div>
+            <div class="proc-select-icon" aria-hidden="true">✨</div>
+            <div class="proc-select-name">Peeling Químico</div>
+            <div class="proc-select-meta">
+              <span class="badge badge-rose">Facial</span>
+              <span class="badge badge-gold">50 min</span>
+            </div>
+          </div>
+
+          <div
+            class="proc-select-card"
+            role="radio"
+            aria-checked="false"
+            tabindex="0"
+            data-proc="Microagulhamento"
+            data-category="Facial"
+            data-duration="75 minutos"
+            data-icon="🔬"
+            id="proc-microagulhamento"
+          >
+            <div class="proc-select-check" aria-hidden="true">✓</div>
+            <div class="proc-select-icon" aria-hidden="true">🔬</div>
+            <div class="proc-select-name">Microagulhamento</div>
+            <div class="proc-select-meta">
+              <span class="badge badge-rose">Facial</span>
+              <span class="badge badge-gold">75 min</span>
+            </div>
+          </div>
+
+          <div
+            class="proc-select-card"
+            role="radio"
+            aria-checked="false"
+            tabindex="0"
+            data-proc="Drenagem Linfática"
+            data-category="Corporal"
+            data-duration="60 minutos"
+            data-icon="🌸"
+            id="proc-drenagem"
+          >
+            <div class="proc-select-check" aria-hidden="true">✓</div>
+            <div class="proc-select-icon" aria-hidden="true">🌸</div>
+            <div class="proc-select-name">Drenagem Linfática</div>
+            <div class="proc-select-meta">
+              <span class="badge badge-rose">Corporal</span>
+              <span class="badge badge-gold">60 min</span>
+            </div>
+          </div>
+
+          <div
+            class="proc-select-card"
+            role="radio"
+            aria-checked="false"
+            tabindex="0"
+            data-proc="Massagem com Pedras Quentes"
+            data-category="Corporal"
+            data-duration="90 minutos"
+            data-icon="🪨"
+            id="proc-pedras"
+          >
+            <div class="proc-select-check" aria-hidden="true">✓</div>
+            <div class="proc-select-icon" aria-hidden="true">🪨</div>
+            <div class="proc-select-name">Massagem com Pedras Quentes</div>
+            <div class="proc-select-meta">
+              <span class="badge badge-rose">Corporal</span>
+              <span class="badge badge-gold">90 min</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Nav -->
+        <div class="step-nav">
+          <span></span>
+          <button class="btn btn-primary" id="step1-next" disabled aria-disabled="true">
+            Próximo: Escolher Data
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- ────────────────────────────────
+           ETAPA 2 — Data e Horário
+      ──────────────────────────────── -->
+      <section
+        class="step-content"
+        id="step-2"
+        aria-labelledby="step2-title"
+        role="tabpanel"
+        aria-hidden="true"
+      >
+        <h2 class="step-title" id="step2-title">Quando você prefere?</h2>
+        <p class="step-subtitle">Selecione a data e o horário disponível.</p>
+
+        <!-- Date strip -->
+        <div
+          class="date-picker-strip"
+          id="date-picker-strip"
+          role="group"
+          aria-label="Selecione uma data"
+        >
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Time grid -->
+        <div class="time-grid-label">Horários disponíveis</div>
+        <div class="time-grid" id="time-grid" role="group" aria-label="Horários disponíveis">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Nav -->
+        <div class="step-nav">
+          <button class="btn-back" id="step2-back" type="button">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Voltar
+          </button>
+          <button class="btn btn-primary" id="step2-next" disabled aria-disabled="true">
+            Próximo: Seus Dados
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- ────────────────────────────────
+           ETAPA 3 — Dados da Paciente
+      ──────────────────────────────── -->
+      <section
+        class="step-content"
+        id="step-3"
+        aria-labelledby="step3-title"
+        role="tabpanel"
+        aria-hidden="true"
+      >
+        <h2 class="step-title" id="step3-title">Seus dados de contato.</h2>
+        <p class="step-subtitle">Utilizaremos essas informações para confirmar seu agendamento via WhatsApp.</p>
+
+        <form id="form-paciente" novalidate>
+
+          <div class="form-group">
+            <label class="form-label" for="input-nome">Nome Completo</label>
+            <input
+              type="text"
+              id="input-nome"
+              class="form-input"
+              placeholder="Seu nome completo"
+              autocomplete="name"
+              required
+              aria-required="true"
+            />
+            <div class="field-error" id="error-nome" role="alert" aria-live="polite"></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="input-whatsapp">WhatsApp</label>
+            <input
+              type="tel"
+              id="input-whatsapp"
+              class="form-input"
+              placeholder="(00) 00000-0000"
+              autocomplete="tel"
+              required
+              aria-required="true"
+              maxlength="15"
+            />
+            <div class="field-error" id="error-whatsapp" role="alert" aria-live="polite"></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="input-queixa">
+              Queixa Principal / Alergias
+              <span class="form-optional">(opcional)</span>
+            </label>
+            <textarea
+              id="input-queixa"
+              class="form-textarea"
+              placeholder="Ex.: Pele sensível, alergia a fragrâncias, foco em manchas..."
+              rows="3"
+            ></textarea>
+          </div>
+
+        </form>
+
+        <!-- Nav -->
+        <div class="step-nav">
+          <button class="btn-back" id="step3-back" type="button">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Voltar
+          </button>
+          <button class="btn btn-primary" id="step3-next" type="button">
+            Revisar Agendamento
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- ────────────────────────────────
+           ETAPA 4 — Confirmação (Ticket)
+      ──────────────────────────────── -->
+      <section
+        class="step-content"
+        id="step-4"
+        aria-labelledby="step4-title"
+        role="tabpanel"
+        aria-hidden="true"
+        style="padding-bottom: var(--spacing-2xl);"
+      >
+        <h2 class="step-title" id="step4-title" style="text-align:center;">Tudo certo! 🌸</h2>
+        <p class="step-subtitle" style="text-align:center;">Confirme os detalhes do seu agendamento abaixo.</p>
+
+        <div class="ticket-card" id="ticket-card">
+
+          <div class="ticket-header">
+            <img src="assets/img2/logo/logo_branco.png" alt="Bella Vita" />
+          </div>
+
+          <div class="ticket-body">
+
+            <div class="ticket-row">
+              <div class="ticket-label">Procedimento</div>
+              <div class="ticket-value" id="ticket-proc">—</div>
+            </div>
+
+            <div class="ticket-row">
+              <div class="ticket-label">Categoria</div>
+              <div class="ticket-value" id="ticket-category">—</div>
+            </div>
+
+            <div class="ticket-row">
+              <div class="ticket-label">Duração estimada</div>
+              <div class="ticket-value" id="ticket-duration">—</div>
+            </div>
+
+            <div class="ticket-row">
+              <div class="ticket-label">Data</div>
+              <div class="ticket-value" id="ticket-date">—</div>
+            </div>
+
+            <div class="ticket-row">
+              <div class="ticket-label">Horário</div>
+              <div class="ticket-value" id="ticket-time">—</div>
+            </div>
+
+            <div class="ticket-row">
+              <div class="ticket-label">Paciente</div>
+              <div class="ticket-value" id="ticket-name">—</div>
+            </div>
+
+            <div class="ticket-row" id="ticket-queixa-row" style="display:none;">
+              <div class="ticket-label">Observações</div>
+              <div class="ticket-value" id="ticket-queixa">—</div>
+            </div>
+
+          </div>
+
+          <!-- Perforated separator -->
+          <div style="position:relative; padding: 0 var(--spacing-md);">
+            <div class="ticket-perforated"></div>
+            <hr class="ticket-dashed" />
+          </div>
+
+          <div class="ticket-footer">
+            <p class="ticket-note">
+              Ao confirmar, você será redirecionada para o WhatsApp da Bella Vita com todas as informações do seu agendamento. Nossa equipe retornará em até 1 hora útil.
+            </p>
+            <button class="btn btn-primary" id="btn-confirmar" style="width:100%; max-width:320px; font-size:0.95rem; padding:16px 32px;">
+              Confirmar pelo WhatsApp
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </button>
+            <button class="btn-back" id="step4-back" type="button" style="font-size:0.8rem; margin-top:var(--spacing-xs);">
+              ← Editar informações
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Mobile FAB -->
+  <div class="mobile-fab" id="mobile-fab">
+    <a href="index.html" class="btn btn-ghost" style="flex:1; text-align:center; font-size:0.82rem; padding:12px var(--spacing-sm);" id="fab-home-btn">
+      ← Voltar ao site
+    </a>
+    <a
+      href="https://wa.me/5511999999999"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mobile-fab-whatsapp"
+      id="fab-whatsapp-btn"
+      aria-label="Contato via WhatsApp"
+    >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+
+  <!-- WhatsApp Float (desktop) -->
+  <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="wa-float" id="desktop-whatsapp-btn" aria-label="Falar no WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/agendamento.js"></script>
+</body>
+</html>
