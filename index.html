@@ -1,280 +1,1119 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Estética Bella Vita - Beleza e Bem-estar</title>
-    <meta name="description" content="Clínica Estética Bella Vita: harmonização facial, tratamentos corporais, cuidados com a pele e depilação a laser. Agende sua consulta gratuita!">
-    <meta property="og:title" content="Clínica Estética Bella Vita">
-    <meta property="og:description" content="Desperte sua beleza natural com tratamentos estéticos personalizados. Tecnologia de ponta e profissionais especializados.">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Bella Vita by Gabrieli Rodrigues — Clínica de estética de alto padrão especializada em protocolos faciais e corporais individualizados. Descubra a harmonia natural do seu autocuidado." />
+  <meta name="keywords" content="estética clínica, limpeza de pele, microagulhamento, peeling químico, drenagem linfática, massagem com pedras quentes, estética são paulo, gabrieli rodrigues" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Meta Social -->
+  <meta property="og:title" content="Bella Vita by Gabrieli Rodrigues | Clínica de Estética de Alto Padrão" />
+  <meta property="og:description" content="Protocolos individualizados conduzidos com rigor técnico, biossegurança e sensibilidade clínica." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/gabrieli_principal.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <title>Bella Vita by Gabrieli Rodrigues | Clínica de Estética</title>
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Estilos Customizados (High-Craft UI) -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="logo">
-                    <img src="assets/img/logo_branco.png" alt="Bella Vita" width="180">
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#services">Serviços</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="agendamento.html" class="btn-highlight"><i class="fas fa-calendar-alt"></i> Agendar Consulta</a></li>
-                </ul>
-                <div class="hamburger" aria-label="Abrir menu" role="button" tabindex="0">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="assets/img/video_hero.mp4" type="video/mp4">
-        </video>
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Desperte sua <span class="highlight">Beleza Natural</span></h1>
-                <p>Transforme sua autoestima com nossos tratamentos estéticos personalizados. Tecnologia de ponta e profissionais especializados para realçar o melhor de você.</p>
-                <div class="hero-buttons">
-                    <a href="agendamento.html" class="btn btn-primary"><i class="fas fa-calendar-alt"></i> Agendar Consulta</a>
-                    <a href="#services" class="btn btn-secondary"><i class="fas fa-spa"></i> Nossos Serviços</a>
-                </div>
+  <!-- ══════════════════════════════════════════
+       HEADER FLUTUANTE
+  ══════════════════════════════════════════ -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="container header-inner">
+
+      <a href="#hero" class="header-logo" aria-label="Bella Vita — Início">
+        <img src="assets/images/logo_png.png" alt="Bella Vita by Gabrieli Rodrigues" width="160" height="38" />
+      </a>
+
+      <nav class="header-nav" aria-label="Navegação principal">
+        <a href="#procedimentos" class="nav-link">Procedimentos</a>
+        <a href="#diferenciais" class="nav-link">Diferenciais</a>
+        <a href="#sobre" class="nav-link">A Clínica</a>
+        <a href="#experiencia" class="nav-link">Experiência</a>
+        <a href="#depoimentos" class="nav-link">Depoimentos</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn-slide-up btn-primary" data-open-booking id="header-cta-btn" aria-label="Agendar Consulta">
+          <span class="slide-layer">
+            <span class="text-primary">Agendar Consulta</span>
+            <span class="text-clone">Agendar Consulta</span>
+          </span>
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M7 17L17 7M17 7H7M17 7V17" />
+          </svg>
+        </button>
+
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-drawer"
+          aria-label="Abrir menu de navegação"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Overlay & Drawer -->
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
+  <nav
+    class="nav-drawer"
+    id="nav-drawer"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Menu móvel de navegação"
+    aria-hidden="true"
+  >
+    <div class="drawer-links">
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#sobre">A Clínica</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#depoimentos">Depoimentos</a>
+    </div>
+
+    <div class="drawer-footer">
+      <button type="button" class="btn-slide-up btn-accent" style="width:100%;" data-open-booking id="drawer-cta-btn">
+        <span class="slide-layer">
+          <span class="text-primary">Agendar Consulta</span>
+          <span class="text-clone">Agendar Consulta</span>
+        </span>
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M7 17L17 7M17 7H7M17 7V17" />
+        </svg>
+      </button>
+
+      <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="btn-slide-up btn-outline" style="width:100%;">
+        <span class="slide-layer">
+          <span class="text-primary">Falar no WhatsApp</span>
+          <span class="text-clone">Falar no WhatsApp</span>
+        </span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- ── 1. HERO SECTION ── -->
+    <section class="section-hero" id="hero" aria-label="Apresentação Clínica Bella Vita">
+      <div class="container">
+        <div class="hero-grid">
+
+          <div class="hero-content reveal">
+            <div class="eyebrow">
+              <span class="dot"></span>
+              Estética Clínica de Alto Padrão
             </div>
+
+            <h1 class="display-hero">
+              A harmonia<br />
+              <em>natural</em> do seu<br />
+              autocuidado.
+            </h1>
+
+            <p class="body-lead" style="margin-top: 24px;">
+              Protocolos estéticos individualizados conduzidos com precisão técnica, ativos de alta performance e sensibilidade clínica, para que cada sessão seja uma experiência de renovação genuína.
+            </p>
+
+            <div class="hero-actions">
+              <button type="button" class="btn-slide-up btn-primary" data-open-booking id="hero-agendar-btn">
+                <span class="slide-layer">
+                  <span class="text-primary">Agendar Consulta</span>
+                  <span class="text-clone">Agendar Consulta</span>
+                </span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+              </button>
+
+              <a href="#procedimentos" class="btn-slide-up btn-outline" id="hero-proc-btn">
+                <span class="slide-layer">
+                  <span class="text-primary">Explorar Protocolos</span>
+                  <span class="text-clone">Explorar Protocolos</span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Visual com Skeleton Loader -->
+          <div class="hero-visual reveal reveal-delay-2">
+            <div class="hero-image-frame image-wrapper">
+              <div class="skeleton-box" style="position:absolute; inset:0;" aria-hidden="true"></div>
+              <img
+                src="assets/images/gabrieli_principal.jpg"
+                alt="Gabrieli Rodrigues — Fundadora e Esteticista Clínica da Bella Vita"
+                width="640"
+                height="800"
+                fetchpriority="high"
+              />
+
+              <div class="hero-floating-badge" aria-hidden="true">
+                <span class="badge-sparkle">✦</span>
+                <div class="badge-text">
+                  <strong>Gabrieli Rodrigues</strong>
+                  <span>Esteticista Clínica Especializada</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
+
+        <!-- ── METADATA GRID BAR (Skill high-craft-ui) ── -->
+        <div class="metadata-grid-bar reveal reveal-delay-3">
+          <div class="metadata-grid">
+            <div class="meta-item">
+              <span class="meta-label">Casos Clínicos</span>
+              <span class="meta-value">500+</span>
+              <span class="meta-sub">Pacientes Atendidas</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Especialidades</span>
+              <span class="meta-value">6 Protocolos</span>
+              <span class="meta-sub">Faciais & Corporais</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Satisfação</span>
+              <span class="meta-value">5.0 ★</span>
+              <span class="meta-sub">Avaliação Unânime</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Padrão Clínico</span>
+              <span class="meta-value">100%</span>
+              <span class="meta-sub">Biossegurança e Autoclave</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item scroll-animate">
-                    <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
-                    <p class="stat-label">Anos de Experiência</p>
-                </div>
-                <div class="stat-item scroll-animate">
-                    <span class="stat-number" data-target="500">0</span><span class="stat-suffix">+</span>
-                    <p class="stat-label">Clientes Atendidas</p>
-                </div>
-                <div class="stat-item scroll-animate">
-                    <span class="stat-number" data-target="4">0</span><span class="stat-suffix"></span>
-                    <p class="stat-label">Especialidades</p>
-                </div>
-                <div class="stat-item scroll-animate">
-                    <span class="stat-number" data-target="98">0</span><span class="stat-suffix">%</span>
-                    <p class="stat-label">Satisfação</p>
-                </div>
-            </div>
+    <!-- ── 2. BENTO GRID MODULAR (Arquitetura de Excelência) ── -->
+    <section class="section-bento" id="diferenciais" aria-labelledby="bento-title">
+      <div class="container">
+        
+        <div class="section-header-centered reveal">
+          <div class="eyebrow">
+            <span class="dot"></span>
+            Arquitetura do Cuidado
+          </div>
+          <h2 class="display-title" id="bento-title">
+            Excelência técnica em cada detalhe.
+          </h2>
+          <p class="body-lead" style="margin-top: 14px;">
+            A estética de alto padrão na Bella Vita combina ciência dermatológica, atendimento empático e um compromisso irrestrito com a sua integridade e segurança.
+          </p>
         </div>
+
+        <div class="bento-grid">
+
+          <!-- Card 1 (Span 7 - Destaque) -->
+          <div class="bento-card bento-col-7 highlight reveal">
+            <div>
+              <div class="bento-icon-wrapper" aria-hidden="true">🔬</div>
+              <h3 class="bento-title">Anamnese Individual & Personalização Real</h3>
+              <p class="bento-desc">
+                Não acreditamos em receitas prontas. Antes de tocar na sua pele, realizamos uma consulta minuciosa para compreender seu histórico, estilo de vida, hábitos cutâneos e aspirações. Cada protocolo é ajustado sob medida para o seu momento celular.
+              </p>
+            </div>
+            <div class="bento-pills">
+              <span class="bento-pill">Diagnóstico Dérmico</span>
+              <span class="bento-pill">Mapeamento de Sensibilidade</span>
+              <span class="bento-pill">Acompanhamento Contínuo</span>
+            </div>
+          </div>
+
+          <!-- Card 2 (Span 5) -->
+          <div class="bento-card bento-col-5 reveal reveal-delay-1">
+            <div>
+              <div class="bento-icon-wrapper" aria-hidden="true">🛡️</div>
+              <h3 class="bento-title">Biossegurança de Nível Hospitalar</h3>
+              <p class="bento-desc">
+                Ambiente rigorosamente esterilizado, esterilização em autoclave com testes biológicos periódicos e uso de descartáveis premium em 100% dos procedimentos.
+              </p>
+            </div>
+            <div class="bento-pills">
+              <span class="bento-pill">Rigor Clínico</span>
+              <span class="bento-pill">Grau Cirúrgico</span>
+            </div>
+          </div>
+
+          <!-- Card 3 (Span 4) -->
+          <div class="bento-card bento-col-4 reveal">
+            <div>
+              <div class="bento-icon-wrapper" aria-hidden="true">✨</div>
+              <h3 class="bento-title">Atendimento 1 a 1 Exclusivo</h3>
+              <p class="bento-desc">
+                Agendamento espaçado com hora marcada. Na Bella Vita você nunca divide espaço de espera nem é atendida com pressa. O espaço é inteiramente seu.
+              </p>
+            </div>
+            <div class="bento-pills">
+              <span class="bento-pill">Privacidade Absoluta</span>
+            </div>
+          </div>
+
+          <!-- Card 4 (Span 4) -->
+          <div class="bento-card bento-col-4 reveal reveal-delay-1">
+            <div>
+              <div class="bento-icon-wrapper" aria-hidden="true">🌿</div>
+              <h3 class="bento-title">Ativos Biocompatíveis</h3>
+              <p class="bento-desc">
+                Utilizamos exclusivamente dermocosméticos de grau médico com certificação Anvisa, alta biodisponibilidade e eficácia comprovada por ensaios clínicos.
+              </p>
+            </div>
+            <div class="bento-pills">
+              <span class="bento-pill">Cosmecêutica Limpa</span>
+            </div>
+          </div>
+
+          <!-- Card 5 (Span 4) -->
+          <div class="bento-card bento-col-4 reveal reveal-delay-2">
+            <div>
+              <div class="bento-icon-wrapper" aria-hidden="true">✦</div>
+              <h3 class="bento-title">Harmonia sem Artificialidade</h3>
+              <p class="bento-desc">
+                Trabalhamos para ressaltar a sua beleza original e viço natural, sem excessos, respeitando os traços e a saúde a longo prazo da sua cútis.
+              </p>
+            </div>
+            <div class="bento-pills">
+              <span class="bento-pill">Elegância Natural</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Nossos Serviços</h2>
-                <p>Oferecemos uma ampla gama de tratamentos estéticos com tecnologia avançada</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-magic"></i>
-                    </div>
-                    <h3>Harmonização Facial</h3>
-                    <p>Realce sua beleza natural com procedimentos minimamente invasivos para harmonizar os traços faciais.</p>
-                    <a href="agendamento.html" class="service-btn"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3>Tratamentos Corporais</h3>
-                    <p>Modelagem corporal, redução de medidas e tratamentos para celulite com tecnologia de ponta.</p>
-                    <a href="agendamento.html" class="service-btn"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3>Cuidados com a Pele</h3>
-                    <p>Limpeza de pele, peelings e tratamentos anti-idade para uma pele radiante e saudável.</p>
-                    <a href="agendamento.html" class="service-btn"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>Depilação a Laser</h3>
-                    <p>Livre-se dos pelos indesejados de forma definitiva com nossa tecnologia laser de última geração.</p>
-                    <a href="agendamento.html" class="service-btn"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
-                </div>
-            </div>
+    <!-- ── 3. VITRINE DE PROCEDIMENTOS ESPECIALIZADOS ── -->
+    <section class="section-procedimentos" id="procedimentos" aria-labelledby="proc-heading">
+      <div class="container">
+
+        <div class="section-header-centered reveal">
+          <div class="eyebrow">
+            <span class="dot"></span>
+            Protocolos Exclusivos
+          </div>
+          <h2 class="display-title" id="proc-heading">
+            Tratamentos para cada necessidade da sua pele.
+          </h2>
+          <p class="body-lead" style="margin-top: 14px;">
+            Explore nossos tratamentos de alta precisão. Cada protocolo inclui higienização preparatória e suporte pós-sessão.
+          </p>
         </div>
+
+        <!-- Abas de Filtro -->
+        <div class="filter-tabs reveal">
+          <button type="button" class="filter-tab is-active" data-filter="all">Todos os Protocolos</button>
+          <button type="button" class="filter-tab" data-filter="facial">Tratamento Facial</button>
+          <button type="button" class="filter-tab" data-filter="bioestimulacao">Bioestimulação</button>
+          <button type="button" class="filter-tab" data-filter="corporal">Corporal & Bem-estar</button>
+        </div>
+
+        <!-- Grade de Procedimentos -->
+        <div class="procedimentos-grid">
+
+          <!-- Card 1 -->
+          <article class="proc-card reveal" data-category="facial" aria-label="Limpeza de Pele Profunda">
+            <div>
+              <div class="proc-card-header">
+                <span class="proc-badge">Tratamento Facial</span>
+                <div class="proc-icon-box" aria-hidden="true">🌿</div>
+              </div>
+              <h3 class="proc-title">Limpeza de Pele Profunda</h3>
+              <p class="proc-desc">
+                Protocolo completo de higienização celular com extração meticulosa de comedões, emoliente suave, vaporizador de ozônio bactericida e máscara calmante regenerativa.
+              </p>
+            </div>
+            <footer class="proc-footer">
+              <span class="proc-duration">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                60 minutos
+              </span>
+              <button type="button" class="proc-action-btn" data-open-booking data-procedure="Limpeza de Pele Profunda">
+                Agendar
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </footer>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="proc-card reveal reveal-delay-1" data-category="facial" aria-label="Hidratação Facial Profunda">
+            <div>
+              <div class="proc-card-header">
+                <span class="proc-badge">Tratamento Facial</span>
+                <div class="proc-icon-box" aria-hidden="true">💧</div>
+              </div>
+              <h3 class="proc-title">Hidratação Facial com Peptídeos</h3>
+              <p class="proc-desc">
+                Reposição hidrolipídica intensiva com ácido hialurônico de múltiplos pesos moleculares e biopeptídeos tensores. Restaura o viço, maciez e a barreira cutânea contra poluição.
+              </p>
+            </div>
+            <footer class="proc-footer">
+              <span class="proc-duration">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                45 minutos
+              </span>
+              <button type="button" class="proc-action-btn" data-open-booking data-procedure="Hidratação Facial">
+                Agendar
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </footer>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="proc-card reveal reveal-delay-2" data-category="facial" aria-label="Peeling Químico">
+            <div>
+              <div class="proc-card-header">
+                <span class="proc-badge">Renovação Celular</span>
+                <div class="proc-icon-box" aria-hidden="true">✨</div>
+              </div>
+              <h3 class="proc-title">Peeling Químico Magistral</h3>
+              <p class="proc-desc">
+                Esfoliação química controlada com ácidos nobres (glicólico, mandélico ou salicílico) indicados para uniformização de manchas solares, melasma e refinamento de poros.
+              </p>
+            </div>
+            <footer class="proc-footer">
+              <span class="proc-duration">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                50 minutos
+              </span>
+              <button type="button" class="proc-action-btn" data-open-booking data-procedure="Peeling Químico">
+                Agendar
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </footer>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="proc-card reveal" data-category="bioestimulacao" aria-label="Microagulhamento">
+            <div>
+              <div class="proc-card-header">
+                <span class="proc-badge">Bioestimulação</span>
+                <div class="proc-icon-box" aria-hidden="true">🔬</div>
+              </div>
+              <h3 class="proc-title">Microagulhamento & Drug Delivery</h3>
+              <p class="proc-desc">
+                Indução percutânea de colágeno com microagulhas estéreis associada à infusão transdérmica de fatores de crescimento. Trata flacidez inicial, cicatrizes e linhas finas.
+              </p>
+            </div>
+            <footer class="proc-footer">
+              <span class="proc-duration">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                75 minutos
+              </span>
+              <button type="button" class="proc-action-btn" data-open-booking data-procedure="Microagulhamento">
+                Agendar
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </footer>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="proc-card reveal reveal-delay-1" data-category="corporal" aria-label="Drenagem Linfática">
+            <div>
+              <div class="proc-card-header">
+                <span class="proc-badge">Tratamento Corporal</span>
+                <div class="proc-icon-box" aria-hidden="true">🌸</div>
+              </div>
+              <h3 class="proc-title">Drenagem Linfática Especializada</h3>
+              <p class="proc-desc">
+                Manobras manuais especializadas pelo método Vodder para acelerar o fluxo linfático, reduzir edemas, celulite congestiva e proporcionar sensação imediata de leveza.
+              </p>
+            </div>
+            <footer class="proc-footer">
+              <span class="proc-duration">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                60 minutos
+              </span>
+              <button type="button" class="proc-action-btn" data-open-booking data-procedure="Drenagem Linfática">
+                Agendar
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </footer>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="proc-card reveal reveal-delay-2" data-category="corporal" aria-label="Massagem com Pedras Quentes">
+            <div>
+              <div class="proc-card-header">
+                <span class="proc-badge">Relaxamento Profundo</span>
+                <div class="proc-icon-box" aria-hidden="true">🪨</div>
+              </div>
+              <h3 class="proc-title">Massagem com Pedras Quentes</h3>
+              <p class="proc-desc">
+                Ritual termoterapêutico com pedras vulcânicas de basalto aquecidas em óleos aromaterápicos. Alívio de tensões musculares crônicas, estresse e fadiga mental.
+              </p>
+            </div>
+            <footer class="proc-footer">
+              <span class="proc-duration">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                90 minutos
+              </span>
+              <button type="button" class="proc-action-btn" data-open-booking data-procedure="Massagem com Pedras Quentes">
+                Agendar
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </footer>
+          </article>
+
+        </div>
+
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Sobre a Bella Vita</h2>
-                    <p>Com mais de 10 anos de experiência no mercado de estética, a Clínica Bella Vita é referência em tratamentos estéticos personalizados. Nossa equipe de profissionais altamente qualificados utiliza as mais modernas tecnologias para proporcionar resultados excepcionais.</p>
-                    <div class="about-features">
-                        <div class="feature">
-                            <i class="fas fa-award"></i>
-                            <div>
-                                <h4>Profissionais Certificados</h4>
-                                <p>Equipe especializada e constantemente atualizada</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-microscope"></i>
-                            <div>
-                                <h4>Tecnologia Avançada</h4>
-                                <p>Equipamentos de última geração para melhores resultados</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-heart"></i>
-                            <div>
-                                <h4>Atendimento Personalizado</h4>
-                                <p>Cada cliente recebe um tratamento único e exclusivo</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <video autoplay muted loop playsinline class="about-video">
-                        <source src="assets/img/video_profissional.mp4" type="video/mp4">
-                    </video>
-                </div>
+    <!-- ── 4. ASYMMETRIC STICKY SPLIT (Sobre a Clínica & Gabrieli Rodrigues) ── -->
+    <section class="section-sticky-split" id="sobre" aria-labelledby="sobre-title">
+      <div class="container">
+        <div class="sticky-split-container">
+
+          <!-- Coluna Esquerda Sticky -->
+          <div class="sticky-col-left reveal">
+            <div class="eyebrow">
+              <span class="dot"></span>
+              A Essência Bella Vita
             </div>
+            <h2 class="display-title" id="sobre-title">
+              Técnica, sensibilidade e <em>protocolos seguros.</em>
+            </h2>
+            <p class="body-lead" style="margin-top: 18px;">
+              A Bella Vita nasceu da paixão da esteticista Gabrieli Rodrigues pela estética com propósito — onde cada toque é guiado pelo rigor técnico, pela integridade física e pela escuta genuína de cada mulher.
+            </p>
+
+            <div class="autoridade-photo-frame image-wrapper">
+              <div class="skeleton-box" style="position:absolute; inset:0;" aria-hidden="true"></div>
+              <img
+                src="assets/images/gabrieli02.jpg"
+                alt="Gabrieli Rodrigues conduzindo atendimento clínico na Bella Vita"
+                width="580"
+                height="696"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+
+          <!-- Coluna Direita Narrativa -->
+          <div class="split-narrative-list">
+
+            <div class="pillar-card reveal">
+              <div class="pillar-icon-box" aria-hidden="true">🛡️</div>
+              <div>
+                <h3 class="pillar-title">Biossegurança e Esterilização Total</h3>
+                <p class="pillar-text">
+                  Seguimos com rigor os protocolos da Vigilância Sanitária e normas internacionais de assepsia. Materiais descartáveis invioláveis abertos na presença da paciente e instrumentos cirúrgicos esterilizados em autoclave.
+                </p>
+              </div>
+            </div>
+
+            <div class="pillar-card reveal reveal-delay-1">
+              <div class="pillar-icon-box" aria-hidden="true">📋</div>
+              <div>
+                <h3 class="pillar-title">Anamnese Individualizada Prévia</h3>
+                <p class="pillar-text">
+                  Nenhum protocolo tem início sem um diagnóstico do histórico de saúde, alergias, sensibilidades e rotina da paciente. Essa etapa assegura previsibilidade e segurança irretocável em cada intervenção.
+                </p>
+              </div>
+            </div>
+
+            <div class="pillar-card reveal reveal-delay-2">
+              <div class="pillar-icon-box" aria-hidden="true">🎓</div>
+              <div>
+                <h3 class="pillar-title">Formação e Atualização Contínua</h3>
+                <p class="pillar-text">
+                  Gabrieli Rodrigues investe continuamente em cursos de pós-graduação e aperfeiçoamento nos mais prestigiados centros de estética médica avançada, garantindo o que há de mais atual na cosmetologia global.
+                </p>
+              </div>
+            </div>
+
+            <div class="pillar-card reveal reveal-delay-3">
+              <div class="pillar-icon-box" aria-hidden="true">✦</div>
+              <div>
+                <h3 class="pillar-title">Ativos Farmacêuticos de 1ª Linha</h3>
+                <p class="pillar-text">
+                  Utilizamos fórmulas biocompatíveis de padrão cosmecêutico elevado, sem parabenos nocivos, livres de componentes alergênicos e com comprovação científica de resultados.
+                </p>
+              </div>
+            </div>
+
+            <div class="reveal reveal-delay-4" style="margin-top: 12px;">
+              <button type="button" class="btn-slide-up btn-primary" data-open-booking id="sobre-agendar-btn">
+                <span class="slide-layer">
+                  <span class="text-primary">Conhecer a Experiência</span>
+                  <span class="text-clone">Conhecer a Experiência</span>
+                </span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+              </button>
+            </div>
+
+          </div>
+
         </div>
+      </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>O que nossas clientes dizem</h2>
-                <p>Histórias reais de transformação e autoestima</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card scroll-animate">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Amei o resultado da harmonização! Me senti muito mais confiante e bonita. Profissionais incríveis e ambiente acolhedor."</p>
-                    <div class="testimonial-author">
-                        <img src="https://i.pravatar.cc/60?u=ana-silva" alt="Ana Silva" loading="lazy">
-                        <div>
-                            <strong>Ana Silva</strong>
-                            <span>Harmonização Facial</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card scroll-animate">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"O tratamento para pele transformou minha autoestima. Minha pele ficou muito mais radiante. Super indico a Bella Vita!"</p>
-                    <div class="testimonial-author">
-                        <img src="https://i.pravatar.cc/60?u=carla-mendes" alt="Carla Mendes" loading="lazy">
-                        <div>
-                            <strong>Carla Mendes</strong>
-                            <span>Cuidados com a Pele</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card scroll-animate">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Fiz depilação a laser e os resultados superaram minhas expectativas! Rápido, indolor e duradouro. Recomendo muito!"</p>
-                    <div class="testimonial-author">
-                        <img src="https://i.pravatar.cc/60?u=julia-costa" alt="Júlia Costa" loading="lazy">
-                        <div>
-                            <strong>Júlia Costa</strong>
-                            <span>Depilação a Laser</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- ── 5. INTERACTIVE JOURNEY (Como Funciona 01 a 05 - Skill high-craft-ui) ── -->
+    <section class="section-journey" id="experiencia" aria-labelledby="journey-title">
+      <div class="container">
+
+        <div class="section-header-centered reveal">
+          <div class="eyebrow">
+            <span class="dot"></span>
+            A Jornada da Paciente
+          </div>
+          <h2 class="display-title" id="journey-title">
+            Como funciona a sua experiência.
+          </h2>
+          <p class="body-lead" style="margin-top: 14px;">
+            Da primeira mensagem ao acompanhamento domiciliar, criamos um percurso pensado para acolher e transformar.
+          </p>
         </div>
+
+        <div class="challenge-list">
+
+          <div class="challenge-row reveal">
+            <span class="challenge-number">01</span>
+            <div class="challenge-content">
+              <h4>Agendamento Descomplicado & Triagem</h4>
+              <p>Você escolhe o procedimento e horário ideais no nosso sistema integrado ou conversa diretamente via WhatsApp.</p>
+            </div>
+            <span class="challenge-tag">Etapa Inicial</span>
+          </div>
+
+          <div class="challenge-row reveal reveal-delay-1">
+            <span class="challenge-number">02</span>
+            <div class="challenge-content">
+              <h4>Recepção Acolhedora & Anamnese Clínica</h4>
+              <p>Ao chegar na clínica, você desfruta de um ambiente calmo com café, chá aromático e avaliação detalhada da pele.</p>
+            </div>
+            <span class="challenge-tag">Diagnóstico</span>
+          </div>
+
+          <div class="challenge-row reveal reveal-delay-2">
+            <span class="challenge-number">03</span>
+            <div class="challenge-content">
+              <h4>Execução com Precisão & Conforto Total</h4>
+              <p>Procedimento conduzido com técnicas refinadas, respeito ao limiar de sensibilidade e materiais estéreis.</p>
+            </div>
+            <span class="challenge-tag">Tratamento</span>
+          </div>
+
+          <div class="challenge-row reveal reveal-delay-3">
+            <span class="challenge-number">04</span>
+            <div class="challenge-content">
+              <h4>Orientações e Protocolo Home Care</h4>
+              <p>Você recebe uma prescrição detalhada de cuidados diários para prolongar e potencializar os resultados na sua rotina.</p>
+            </div>
+            <span class="challenge-tag">Prescrição</span>
+          </div>
+
+          <div class="challenge-row reveal reveal-delay-4">
+            <span class="challenge-number">05</span>
+            <div class="challenge-content">
+              <h4>Acompanhamento Pós-Sessão</h4>
+              <p>Entramos em contato nos dias subsequentes para checar a recuperação da sua pele e assegurar seu bem-estar completo.</p>
+            </div>
+            <span class="challenge-tag">Continuidade</span>
+          </div>
+
+        </div>
+
+      </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Pronta para se Transformar?</h2>
-                <ul class="cta-perks">
-                    <li><i class="fas fa-check-circle"></i> Consulta inicial gratuita</li>
-                    <li><i class="fas fa-check-circle"></i> Vagas limitadas este mês</li>
-                </ul>
-                <div class="cta-buttons">
-                    <a href="agendamento.html" class="btn btn-primary btn-large"><i class="fas fa-calendar-alt"></i> Agendar Consulta Gratuita</a>
-                    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-large"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</a>
-                </div>
-            </div>
+    <!-- ── 6. DEPOIMENTOS E PROVA SOCIAL ── -->
+    <section class="section-depoimentos" id="depoimentos" aria-labelledby="dep-heading">
+      <div class="container">
+
+        <div class="section-header-centered reveal">
+          <div class="eyebrow">
+            <span class="dot"></span>
+            Vozes Reais
+          </div>
+          <h2 class="display-title" id="dep-heading">
+            Resultados que transformam o espelho.
+          </h2>
+          <p class="body-lead" style="margin-top: 14px;">
+            A confiança das nossas pacientes é nosso maior selo de qualidade.
+          </p>
         </div>
+
+        <div class="depoimentos-grid">
+
+          <article class="depoimento-card reveal" aria-label="Depoimento de Ana Carolina">
+            <div>
+              <div class="depoimento-stars" aria-label="Avaliação 5 estrelas">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="depoimento-quote">
+                “A Gabi é incrível! Minha pele nunca ficou tão bonita e macia. O protocolo de limpeza profunda foi transformador — saí da clínica radiante e sem vermelhidão exagerada.”
+              </p>
+            </div>
+            <footer class="depoimento-author">
+              <div class="author-name">Ana Carolina M.</div>
+              <div class="author-meta">Limpeza de Pele Profunda · São Paulo</div>
+            </footer>
+          </article>
+
+          <article class="depoimento-card reveal reveal-delay-1" aria-label="Depoimento de Fernanda Lima">
+            <div>
+              <div class="depoimento-stars" aria-label="Avaliação 5 estrelas">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="depoimento-quote">
+                “Fiz o microagulhamento e os resultados superaram qualquer expectativa. O profissionalismo da Gabrieli e o acolhimento do espaço transmitem uma segurança incomparável.”
+              </p>
+            </div>
+            <footer class="depoimento-author">
+              <div class="author-name">Fernanda L. S.</div>
+              <div class="author-meta">Microagulhamento & Fatores · São Paulo</div>
+            </footer>
+          </article>
+
+          <article class="depoimento-card reveal reveal-delay-2" aria-label="Depoimento de Priscila Torres">
+            <div>
+              <div class="depoimento-stars" aria-label="Avaliação 5 estrelas">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="depoimento-quote">
+                “A drenagem linfática da Bella Vita aliviou uma sensação de inchaço e peso que eu sentia há meses. Saí leve e renovada. Já virou meu compromisso quinzenal sagrado!”
+              </p>
+            </div>
+            <footer class="depoimento-author">
+              <div class="author-name">Priscila T. R.</div>
+              <div class="author-meta">Drenagem Linfática · São Paulo</div>
+            </footer>
+          </article>
+
+        </div>
+
+      </div>
     </section>
 
+    <!-- ── 7. SEÇÃO DE CONVERSÃO QUEBRA-OBJEÇÕES & CTA FINAL ── -->
+    <section class="section-cta-final" aria-labelledby="cta-final-title">
+      <div class="container">
+        <div class="cta-box reveal">
 
+          <div class="eyebrow">
+            <span class="dot"></span>
+            Sua Vez de Brilhar
+          </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <div class="footer-section">
-                        <img src="assets/img/logo_branco.png" alt="Bella Vita" width="180">
-                        <p>Sua beleza é nossa paixão. Transformamos sonhos em realidade através de tratamentos estéticos personalizados.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Serviços</h4>
-                        <ul>
-                            <li><a href="#">Harmonização Facial</a></li>
-                            <li><a href="#">Tratamentos Corporais</a></li>
-                            <li><a href="#">Cuidados com a Pele</a></li>
-                            <li><a href="#">Depilação a Laser</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Contato</h4>
-                        <ul>
-                            <li><i class="fas fa-map-marker-alt"></i> Rua das Flores, 123</li>
-                            <li><i class="fas fa-phone"></i> (11) 9999-9999</li>
-                            <li><i class="fas fa-envelope"></i> contato@bellavita.com.br</li>
-                        </ul>
-                    </div>
-                </div>
+          <h2 class="display-title" id="cta-final-title">
+            Reserve sua sessão com a Gabrieli.
+          </h2>
+
+          <p class="body-lead" style="margin-top: 16px;">
+            Atendimento exclusivo com hora marcada. Sem pressa, sem sala de espera lotada — apenas você e o tempo necessário para o seu autocuidado.
+          </p>
+
+          <div class="three-pillars">
+            <div class="pillar-mini">
+              <strong>Atendimento 1 a 1</strong>
+              <span>Espaço reservado exclusivamente para você</span>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <script>document.write(new Date().getFullYear())</script> Bella Vita Clínica Estética. Todos os direitos reservados.</p>
-                <p>Criado por <strong><a href="https://samuelrodsabino.vercel.app/" style="text-decoration: none; color: inherit;" target="_blank" rel="noopener noreferrer">Samuel<span class="highlight-name">Rod</span>Sabino</a></strong></p>
+            <div class="pillar-mini">
+              <strong>Retorno Rápido</strong>
+              <span>Confirmação em minutos via WhatsApp</span>
             </div>
+            <div class="pillar-mini">
+              <strong>Garantia de Assepsia</strong>
+              <span>Protocolos hospitalares de biossegurança</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
+            <button type="button" class="btn-slide-up btn-primary" data-open-booking id="cta-final-agendar-btn">
+              <span class="slide-layer">
+                <span class="text-primary">Agendar Consulta Agora</span>
+                <span class="text-clone">Agendar Consulta Agora</span>
+              </span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </button>
+
+            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="btn-slide-up btn-gold" id="cta-final-wa-btn">
+              <span class="slide-layer">
+                <span class="text-primary">Conversar no WhatsApp</span>
+                <span class="text-clone">Conversar no WhatsApp</span>
+              </span>
+            </a>
+          </div>
+
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Falar no WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER MONUMENTAL
+  ══════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <img src="assets/images/logo_branco.png" alt="Bella Vita by Gabrieli Rodrigues" width="180" height="42" />
+          <p>
+            Estética clínica de alto padrão com foco em protocolos individualizados, biossegurança rigorosa e resultados genuínos.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#procedimentos">Procedimentos</a></li>
+            <li><a href="#diferenciais">Diferenciais</a></li>
+            <li><a href="#sobre">A Clínica</a></li>
+            <li><a href="#experiencia">Como Funciona</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Procedimentos</h4>
+          <ul>
+            <li><a href="#procedimentos">Limpeza de Pele</a></li>
+            <li><a href="#procedimentos">Hidratação Facial</a></li>
+            <li><a href="#procedimentos">Peeling Químico</a></li>
+            <li><a href="#procedimentos">Microagulhamento</a></li>
+            <li><a href="#procedimentos">Drenagem Linfática</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contato Direto</h4>
+          <ul>
+            <li><a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">WhatsApp: (11) 99999-9999</a></li>
+            <li><a href="https://instagram.com/bellavita.gabi" target="_blank" rel="noopener noreferrer">Instagram: @bellavita.gabi</a></li>
+            <li><a href="mailto:contato@bellavita.com.br">contato@bellavita.com.br</a></li>
+            <li><span style="color:#A39A9C; font-size:0.88rem;">São Paulo — SP</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Bella Vita by Gabrieli Rodrigues. Todos os direitos reservados.</p>
+        <div class="social-links">
+          <a href="https://instagram.com/bellavita.gabi" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Bella Vita">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Bella Vita">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════
+       MODAL DE AGENDAMENTO INTELIGENTE (4 PASSOS)
+  ══════════════════════════════════════════ -->
+  <div
+    class="booking-modal-overlay"
+    id="booking-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    aria-hidden="true"
+  >
+    <div class="booking-modal-container">
+
+      <button type="button" class="modal-close-btn" id="booking-modal-close" aria-label="Fechar janela">
+        ✕
+      </button>
+
+      <!-- Stepper Header -->
+      <div class="stepper-progress" role="navigation" aria-label="Progresso do agendamento">
+        <div class="stepper-bar-fill"></div>
+
+        <div class="step-node is-active" data-step-indicator="1">
+          <div class="step-dot">1</div>
+          <span class="step-label">Procedimento</span>
+        </div>
+
+        <div class="step-node" data-step-indicator="2">
+          <div class="step-dot">2</div>
+          <span class="step-label">Data & Hora</span>
+        </div>
+
+        <div class="step-node" data-step-indicator="3">
+          <div class="step-dot">3</div>
+          <span class="step-label">Seus Dados</span>
+        </div>
+
+        <div class="step-node" data-step-indicator="4">
+          <div class="step-dot">✦</div>
+          <span class="step-label">Confirmação</span>
+        </div>
+      </div>
+
+      <!-- Passo 1: Seleção de Procedimento -->
+      <div class="step-panel is-active" data-step="1">
+        <div class="step-heading">
+          <h3 id="modal-title">Qual cuidado você deseja hoje?</h3>
+          <p>Selecione o protocolo clínico ideal para você.</p>
+        </div>
+
+        <div class="modal-proc-grid">
+          <div class="modal-proc-option is-selected" data-proc-name="Limpeza de Pele Profunda" data-proc-duration="60 minutos">
+            <span class="modal-proc-name">Limpeza de Pele Profunda</span>
+            <span class="modal-proc-time">🌿 Facial · 60 min</span>
+          </div>
+
+          <div class="modal-proc-option" data-proc-name="Hidratação Facial com Peptídeos" data-proc-duration="45 minutos">
+            <span class="modal-proc-name">Hidratação com Peptídeos</span>
+            <span class="modal-proc-time">💧 Facial · 45 min</span>
+          </div>
+
+          <div class="modal-proc-option" data-proc-name="Peeling Químico Magistral" data-proc-duration="50 minutos">
+            <span class="modal-proc-name">Peeling Químico Magistral</span>
+            <span class="modal-proc-time">✨ Renovação · 50 min</span>
+          </div>
+
+          <div class="modal-proc-option" data-proc-name="Microagulhamento & Drug Delivery" data-proc-duration="75 minutos">
+            <span class="modal-proc-name">Microagulhamento & Colágeno</span>
+            <span class="modal-proc-time">🔬 Bioestimulação · 75 min</span>
+          </div>
+
+          <div class="modal-proc-option" data-proc-name="Drenagem Linfática Especializada" data-proc-duration="60 minutos">
+            <span class="modal-proc-name">Drenagem Linfática</span>
+            <span class="modal-proc-time">🌸 Corporal · 60 min</span>
+          </div>
+
+          <div class="modal-proc-option" data-proc-name="Massagem com Pedras Quentes" data-proc-duration="90 minutos">
+            <span class="modal-proc-name">Massagem com Pedras Quentes</span>
+            <span class="modal-proc-time">🪨 Relaxamento · 90 min</span>
+          </div>
+        </div>
+
+        <div class="step-actions" style="justify-content: flex-end;">
+          <button type="button" class="btn-slide-up btn-primary" id="step1-next">
+            <span class="slide-layer">
+              <span class="text-primary">Avançar para Data</span>
+              <span class="text-clone">Avançar para Data</span>
+            </span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Passo 2: Data e Horário -->
+      <div class="step-panel" data-step="2">
+        <div class="step-heading">
+          <h3>Selecione a Data & Horário</h3>
+          <p>Escolha o dia e horário de preferência para a sua sessão.</p>
+        </div>
+
+        <label class="form-label">Data Disponível</label>
+        <div class="dates-strip">
+          <!-- Gerado dinamicamente via JS -->
+        </div>
+
+        <label class="form-label" style="margin-top: 18px;">Horários da Manhã & Tarde</label>
+        <div class="times-grid">
+          <button type="button" class="time-slot-btn is-selected" data-time="09:00">09:00</button>
+          <button type="button" class="time-slot-btn" data-time="10:30">10:30</button>
+          <button type="button" class="time-slot-btn" data-time="13:30">13:30</button>
+          <button type="button" class="time-slot-btn" data-time="15:00">15:00</button>
+          <button type="button" class="time-slot-btn" data-time="16:30">16:30</button>
+          <button type="button" class="time-slot-btn" data-time="18:00">18:00</button>
+        </div>
+
+        <div class="step-actions">
+          <button type="button" class="btn-slide-up btn-outline" id="step2-prev">
+            <span class="slide-layer">
+              <span class="text-primary">← Voltar</span>
+              <span class="text-clone">← Voltar</span>
+            </span>
+          </button>
+          <button type="button" class="btn-slide-up btn-primary" id="step2-next">
+            <span class="slide-layer">
+              <span class="text-primary">Avançar para Seus Dados</span>
+              <span class="text-clone">Avançar para Seus Dados</span>
+            </span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Passo 3: Dados Pessoais -->
+      <div class="step-panel" data-step="3">
+        <div class="step-heading">
+          <h3>Seus Dados para Contato</h3>
+          <p>Informações necessárias para organizar sua recepção e confirmar a agenda.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="booking-name">Nome Completo *</label>
+          <input type="text" id="booking-name" class="form-input" placeholder="Ex: Fernanda Lima" required />
+          <span class="error-msg" id="err-name">Por favor, informe seu nome completo.</span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="booking-phone">WhatsApp *</label>
+          <input type="tel" id="booking-phone" class="form-input" placeholder="(11) 99999-9999" required />
+          <span class="error-msg" id="err-phone">Por favor, digite um WhatsApp válido.</span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="booking-notes">Observações ou queixas da pele (opcional)</label>
+          <textarea id="booking-notes" class="form-textarea" rows="3" placeholder="Ex: Pele sensível, manchas recentes, gravidez..."></textarea>
+        </div>
+
+        <div class="step-actions">
+          <button type="button" class="btn-slide-up btn-outline" id="step3-prev">
+            <span class="slide-layer">
+              <span class="text-primary">← Voltar</span>
+              <span class="text-clone">← Voltar</span>
+            </span>
+          </button>
+          <button type="button" class="btn-slide-up btn-primary" id="step3-next">
+            <span class="slide-layer">
+              <span class="text-primary">Revisar Agendamento</span>
+              <span class="text-clone">Revisar Agendamento</span>
+            </span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Passo 4: Confirmação e Ticket -->
+      <div class="step-panel" data-step="4">
+        <div class="step-heading" style="text-align: center;">
+          <h3>Tudo Pronto para Confirmar!</h3>
+          <p>Revise seu voucher e confirme sua vaga via WhatsApp.</p>
+        </div>
+
+        <div class="ticket-voucher">
+          <div class="ticket-header">
+            <img src="assets/images/logo_branco.png" alt="Bella Vita" />
+            <div style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; opacity:0.8;">
+              Reserva de Consulta Clínica
+            </div>
+          </div>
+          <div class="ticket-body">
+            <div class="ticket-row">
+              <span class="ticket-label">Procedimento</span>
+              <span class="ticket-val" id="voucher-proc">-</span>
+            </div>
+            <div class="ticket-row">
+              <span class="ticket-label">Duração Estimada</span>
+              <span class="ticket-val" id="voucher-time">-</span>
+            </div>
+            <div class="ticket-row">
+              <span class="ticket-label">Data & Horário</span>
+              <span class="ticket-val" id="voucher-date">-</span>
+            </div>
+            <div class="ticket-row">
+              <span class="ticket-label">Paciente</span>
+              <span class="ticket-val" id="voucher-name">-</span>
+            </div>
+            <div class="ticket-row">
+              <span class="ticket-label">Contato</span>
+              <span class="ticket-val" id="voucher-phone">-</span>
+            </div>
+          </div>
+          <div class="ticket-footer">
+            Atendimento 1 a 1 com a esteticista Gabrieli Rodrigues
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-slide-up btn-accent" id="btn-confirm-wa" style="width: 100%; padding: 16px;">
+            <span class="slide-layer">
+              <span class="text-primary">Confirmar pelo WhatsApp Oficial</span>
+              <span class="text-clone">Confirmar pelo WhatsApp Oficial</span>
+            </span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </a>
+          <p style="font-size:0.75rem; color:var(--color-muted-taupe); margin-top:12px;">
+            Ao clicar, uma mensagem pré-formatada será aberta no seu WhatsApp para confirmação em até 1h útil.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── FLOATING WHATSAPP & MOBILE FAB ── -->
+  <a
+    href="https://wa.me/5511999999999"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="wa-float-btn"
+    id="desktop-wa-btn"
+    aria-label="Falar no WhatsApp"
+  >
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <div class="mobile-fab-bar" role="navigation" aria-label="Ações rápidas mobile">
+    <button type="button" class="btn-slide-up btn-primary" data-open-booking id="fab-agendar-btn">
+      <span class="slide-layer">
+        <span class="text-primary">Agendar Consulta</span>
+        <span class="text-clone">Agendar Consulta</span>
+      </span>
+    </button>
+    <a
+      href="https://wa.me/5511999999999"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mobile-fab-wa"
+      id="fab-wa-btn"
+      aria-label="WhatsApp"
+    >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
     </a>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
