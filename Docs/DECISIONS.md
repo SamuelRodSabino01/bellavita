@@ -43,3 +43,15 @@
 - **Contexto:** Protocolo obrigatório de layout exige skeleton loading, lazy loading e animações suaves em elementos relevantes.
 - **Decisão:** Implementar esqueleto com efeito de pulso shimmer enquanto as imagens de alta resolução de Gabrieli Rodrigues são decodificadas, adicionando lazy loading e `IntersectionObserver` de baixo custo computacional.
 - **Consequências:** Zero Layout Shift (CLS = 0), carregamento quase instantâneo e pontuação máxima no Google Lighthouse / Core Web Vitals.
+
+---
+
+## ADR-005: Incorporação do Quiz de Diagnóstico Rápido e Novo CTA Monumental
+
+- **Data:** 19/10/2026
+- **Status:** Aceito
+- **Contexto:** O projeto necessitava de um mecanismo de redução de atrito e quebra de indecisão para pacientes que visitam a página sem clareza sobre qual procedimento realizar, além de um fechamento de página mais impactante e persuasivo antes do rodapé, conforme prototipado no projeto `bellavita2`.
+- **Decisão:**
+  1. Integrar a seção *"Diagnóstico Rápido"* imediatamente após a vitrine de procedimentos com lógica em `assets/js/quiz.js`, fornecendo barra de progresso animada, suporte completo à navegação por teclado (`role="button"`, `tabindex="0"`, `Enter`/`Espaço`) e conexão direta com o modal de agendamento através de `window.selectProcedureForBooking()`.
+  2. Substituir a seção anterior *"Reserve sua sessão com a Gabrieli."* pela seção monumental *"Pronta para redescobrir a beleza autêntica da sua pele?"*, aproveitando um fundo noturno refinado (`#141112`) com brilho radial rosé, 3 pilares de garantia com ícones SVG dourados e botões duplos de alta conversão.
+- **Consequências:** Maior taxa de conversão para usuárias indecisas, aumento do tempo de engajamento na página e harmonia visual sofisticada de fechamento antes do rodapé escuro.

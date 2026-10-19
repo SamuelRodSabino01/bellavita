@@ -4,6 +4,20 @@ Todas as mudanças relevantes no projeto são documentadas neste arquivo em orde
 
 ---
 
+## [1.1.0] - 2026-10-19
+
+### Adicionado
+- Adicionada a seção interativa **"Diagnóstico Rápido"** (`#quiz`) logo após a vitrine de procedimentos, permitindo à paciente descobrir o tratamento ideal em 3 passos com barra de progresso dinâmica.
+- Criado o módulo **`assets/js/quiz.js`** com mapeamento de objetivos clínicos, cálculo de recomendações e suporte completo a navegação por teclado (acessibilidade com `Enter` e `Espaço`).
+- Exposta a API global `window.selectProcedureForBooking(procName)` no módulo `assets/js/main.js` para integração imediata entre o Quiz e o Modal de Agendamento.
+- Adicionados atalhos de navegação para a seção de Diagnóstico Rápido no Header principal, no Menu Drawer mobile e na coluna de navegação do Rodapé.
+
+### Alterado
+- Substituída a seção *"Reserve sua sessão com a Gabrieli."* pela seção monumental de alta conversão **"Pronta para redescobrir a beleza autêntica da sua pele?"**, apresentando contraste noturno de alto padrão (`#141112`), brilho radial rosé, 3 pilares de confiança com ícones SVG dourados e botões duplos de ação com efeito *Double-Layer Slide-Up*.
+- Estilos correspondentes adicionados em `assets/css/style.css` mantendo conformidade integral com os tokens de design do projeto.
+
+---
+
 ## [1.0.0] - 2026-10-19
 
 ### Adicionado

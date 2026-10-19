@@ -291,9 +291,11 @@ function initBookingModal() {
   });
 
   function selectProcedure(procName) {
+    if (!procName) return;
+    const target = procName.toLowerCase().trim();
     procOptions.forEach(opt => {
       const name = opt.getAttribute('data-proc-name');
-      if (name && name.toLowerCase().includes(procName.toLowerCase())) {
+      if (name && (name.toLowerCase().includes(target) || target.includes(name.toLowerCase()))) {
         procOptions.forEach(o => o.classList.remove('is-selected'));
         opt.classList.add('is-selected');
         state.procedure = name;
@@ -469,4 +471,9 @@ function initBookingModal() {
       btnWhatsApp.href = `https://wa.me/5511999999999?text=${msg}`;
     }
   }
+
+  // API pública para acionamento do agendamento por outros módulos (ex: Quiz)
+  window.selectProcedureForBooking = function(procName) {
+    openModal(procName);
+  };
 }

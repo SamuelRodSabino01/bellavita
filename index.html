@@ -38,6 +38,7 @@
 
       <nav class="header-nav" aria-label="Navegação principal">
         <a href="#procedimentos" class="nav-link">Procedimentos</a>
+        <a href="#quiz" class="nav-link">Diagnóstico</a>
         <a href="#diferenciais" class="nav-link">Diferenciais</a>
         <a href="#sobre" class="nav-link">A Clínica</a>
         <a href="#experiencia" class="nav-link">Experiência</a>
@@ -85,6 +86,7 @@
   >
     <div class="drawer-links">
       <a href="#procedimentos">Procedimentos</a>
+      <a href="#quiz">Diagnóstico Rápido</a>
       <a href="#diferenciais">Diferenciais</a>
       <a href="#sobre">A Clínica</a>
       <a href="#experiencia">Experiência</a>
@@ -484,6 +486,181 @@
       </div>
     </section>
 
+    <!-- ══════════════════════════════════════════════════════════════════════════
+         3.1 QUIZ DE DIAGNÓSTICO RÁPIDO EM 30 SEGUNDOS (ALTA CONVERSÃO)
+    ══════════════════════════════════════════════════════════════════════════ -->
+    <section class="quiz-section" id="quiz" aria-labelledby="quiz-heading">
+      <div class="container">
+        <div class="quiz-container reveal">
+
+          <div class="quiz-progress-bar" aria-hidden="true">
+            <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+          </div>
+
+          <!-- Pergunta 1 -->
+          <div class="quiz-step-panel" id="quiz-step-1">
+            <div class="eyebrow">
+              <span class="dot"></span>
+              Diagnóstico Personalizado · Passo 1 de 3
+            </div>
+            <h2 class="quiz-question-title" id="quiz-heading">Qual é o seu principal objetivo hoje?</h2>
+            <p class="quiz-question-desc">Selecione o que mais incomoda ou o que deseja transformar.</p>
+
+            <div class="quiz-options-grid">
+              <div class="quiz-option-card" data-question="foco" data-val="rosto" role="button" tabindex="0">
+                <span class="quiz-option-icon">✨</span>
+                <div>
+                  <div class="quiz-option-title">Limpeza e Cravos</div>
+                  <div class="quiz-option-subtitle">Desobstruir poros e controlar oleosidade</div>
+                </div>
+              </div>
+
+              <div class="quiz-option-card" data-question="foco" data-val="manchas" role="button" tabindex="0">
+                <span class="quiz-option-icon">🌸</span>
+                <div>
+                  <div class="quiz-option-title">Manchas e Relevo</div>
+                  <div class="quiz-option-subtitle">Uniformizar o tom e renovar a pele</div>
+                </div>
+              </div>
+
+              <div class="quiz-option-card" data-question="foco" data-val="rejuvenescimento" role="button" tabindex="0">
+                <span class="quiz-option-icon">🔬</span>
+                <div>
+                  <div class="quiz-option-title">Firmeza e Linhas Finas</div>
+                  <div class="quiz-option-subtitle">Estimular colágeno e devolver sustentação</div>
+                </div>
+              </div>
+
+              <div class="quiz-option-card" data-question="foco" data-val="corpo" role="button" tabindex="0">
+                <span class="quiz-option-icon">🌿</span>
+                <div>
+                  <div class="quiz-option-title">Retenção e Cansaço Corporal</div>
+                  <div class="quiz-option-subtitle">Desinchar pernas ou aliviar tensões musculares</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 2 -->
+          <div class="quiz-step-panel" id="quiz-step-2" style="display: none;">
+            <div class="eyebrow">
+              <span class="dot"></span>
+              Diagnóstico Personalizado · Passo 2 de 3
+            </div>
+            <h2 class="quiz-question-title">Como você sente sua pele ou seu corpo ultimamente?</h2>
+            <p class="quiz-question-desc">Isso nos ajuda a modular a intensidade dos ativos.</p>
+
+            <div class="quiz-options-grid">
+              <div class="quiz-option-card" data-question="condicao" data-val="oleosa" role="button" tabindex="0">
+                <span class="quiz-option-icon">🌿</span>
+                <div>
+                  <div class="quiz-option-title">Mista a Oleosa</div>
+                  <div class="quiz-option-subtitle">Com brilho na zona T e tendência a cravos</div>
+                </div>
+              </div>
+
+              <div class="quiz-option-card" data-question="condicao" data-val="seca" role="button" tabindex="0">
+                <span class="quiz-option-icon">💧</span>
+                <div>
+                  <div class="quiz-option-title">Ressecada ou Sensível</div>
+                  <div class="quiz-option-subtitle">Puxando, sem viço e necessitando de nutrição</div>
+                </div>
+              </div>
+
+              <div class="quiz-option-card" data-question="condicao" data-val="linhas" role="button" tabindex="0">
+                <span class="quiz-option-icon">⏳</span>
+                <div>
+                  <div class="quiz-option-title">Flacidez ou Linhas Visíveis</div>
+                  <div class="quiz-option-subtitle">Perda de contorno e textura irregular</div>
+                </div>
+              </div>
+
+              <div class="quiz-option-card" data-question="condicao" data-val="pesada" role="button" tabindex="0">
+                <span class="quiz-option-icon">🪨</span>
+                <div>
+                  <div class="quiz-option-title">Corpo Pesado e Retenção</div>
+                  <div class="quiz-option-subtitle">Inchaço frequente no fim do dia</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 3 -->
+          <div class="quiz-step-panel" id="quiz-step-3" style="display: none;">
+            <div class="eyebrow">
+              <span class="dot"></span>
+              Diagnóstico Personalizado · Passo 3 de 3
+            </div>
+            <h2 class="quiz-question-title">Qual experiência você busca na sua visita?</h2>
+            <p class="quiz-question-desc">Seu momento na clínica será sob medida para o seu estilo.</p>
+
+            <div class="quiz-options-grid">
+              <div class="quiz-option-card" data-question="experiencia" data-val="glow" role="button" tabindex="0">
+                <span class="quiz-option-icon">✨</span>
+                <div>
+                  <div class="quiz-option-title">Glow e Renovação Imediata</div>
+                  <div class="quiz-option-subtitle">Sair da clínica com pele radiante para o dia a dia</div>
+                </div>
+              </div>
+
+              <div class="quiz-option-card" data-question="experiencia" data-val="clinico" role="button" tabindex="0">
+                <span class="quiz-option-icon">📋</span>
+                <div>
+                  <div class="quiz-option-title">Tratamento Clínico Aprofundado</div>
+                  <div class="quiz-option-subtitle">Foco em resolver a queixa com precisão</div>
+                </div>
+              </div>
+
+              <div class="quiz-option-card" data-question="experiencia" data-val="relax" role="button" tabindex="0">
+                <span class="quiz-option-icon">🧘‍♀️</span>
+                <div>
+                  <div class="quiz-option-title">Desconexão & Relaxamento Total</div>
+                  <div class="quiz-option-subtitle">Um ritual calmo para renovar as energias</div>
+                </div>
+              </div>
+
+              <div class="quiz-option-card" data-question="experiencia" data-val="express" role="button" tabindex="0">
+                <span class="quiz-option-icon">⚡</span>
+                <div>
+                  <div class="quiz-option-title">Cuidado Eficaz e Sem Perda de Tempo</div>
+                  <div class="quiz-option-subtitle">Protocolo pontual com máxima biossegurança</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resultado do Quiz -->
+          <div class="quiz-result-box" id="quiz-result-box">
+            <span class="result-badge" id="quiz-res-badge">Protocolo Ideal para Você</span>
+            <h3 class="result-title" id="quiz-res-title">Limpeza de Pele Profunda</h3>
+            <p class="result-desc" id="quiz-res-desc">
+              Com base nas suas respostas, este protocolo é o mais eficaz para equilibrar a textura da sua pele e promover a renovação desejada.
+            </p>
+
+            <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+              <button type="button" class="btn-slide-up btn-primary" id="btn-quiz-schedule">
+                <span class="slide-layer">
+                  <span class="text-primary">Agendar Este Protocolo</span>
+                  <span class="text-clone">Agendar Este Protocolo</span>
+                </span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+              </button>
+
+              <button type="button" class="btn-slide-up btn-outline" id="btn-quiz-restart">
+                <span class="slide-layer">
+                  <span class="text-primary">Refazer Diagnóstico</span>
+                  <span class="text-clone">Refazer Diagnóstico</span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- ── 4. ASYMMETRIC STICKY SPLIT (Sobre a Clínica & Gabrieli Rodrigues) ── -->
     <section class="section-sticky-split" id="sobre" aria-labelledby="sobre-title">
       <div class="container">
@@ -714,54 +891,56 @@
       </div>
     </section>
 
-    <!-- ── 7. SEÇÃO DE CONVERSÃO QUEBRA-OBJEÇÕES & CTA FINAL ── -->
-    <section class="section-cta-final" aria-labelledby="cta-final-title">
+    <!-- ══════════════════════════════════════════════════════════════════════════
+         7. FINAL CTA MONUMENTAL
+    ══════════════════════════════════════════════════════════════════════════ -->
+    <section class="final-cta-section" aria-label="Chamada Final para Agendamento">
       <div class="container">
-        <div class="cta-box reveal">
+        <div class="final-cta-box reveal">
 
           <div class="eyebrow">
             <span class="dot"></span>
-            Sua Vez de Brilhar
+            Vagas Limitadas por Semana
           </div>
 
-          <h2 class="display-title" id="cta-final-title">
-            Reserve sua sessão com a Gabrieli.
+          <h2 class="final-cta-headline">
+            Pronta para redescobrir a beleza <em>autêntica</em> da sua pele?
           </h2>
 
-          <p class="body-lead" style="margin-top: 16px;">
-            Atendimento exclusivo com hora marcada. Sem pressa, sem sala de espera lotada — apenas você e o tempo necessário para o seu autocuidado.
+          <p class="body-lead">
+            Reserve um momento dedicado inteiramente a você. Sem pressa, sem desconforto — apenas rigor técnico e acolhimento humano.
           </p>
 
-          <div class="three-pillars">
-            <div class="pillar-mini">
-              <strong>Atendimento 1 a 1</strong>
-              <span>Espaço reservado exclusivamente para você</span>
+          <div class="final-cta-pillars">
+            <div class="pillar-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Atendimento Exclusivo</span>
             </div>
-            <div class="pillar-mini">
-              <strong>Retorno Rápido</strong>
-              <span>Confirmação em minutos via WhatsApp</span>
+            <div class="pillar-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>100% Biosseguro</span>
             </div>
-            <div class="pillar-mini">
-              <strong>Garantia de Assepsia</strong>
-              <span>Protocolos hospitalares de biossegurança</span>
+            <div class="pillar-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Confirmação Ágil no WhatsApp</span>
             </div>
           </div>
 
-          <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
-            <button type="button" class="btn-slide-up btn-primary" data-open-booking id="cta-final-agendar-btn">
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <button type="button" class="btn-slide-up btn-gold" data-open-booking id="btn-final-cta-agendar">
               <span class="slide-layer">
-                <span class="text-primary">Agendar Consulta Agora</span>
-                <span class="text-clone">Agendar Consulta Agora</span>
+                <span class="text-primary">Agendar Minha Consulta Agora</span>
+                <span class="text-clone">Agendar Minha Consulta Agora</span>
               </span>
               <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M7 17L17 7M17 7H7M17 7V17" />
               </svg>
             </button>
 
-            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="btn-slide-up btn-gold" id="cta-final-wa-btn">
+            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="btn-slide-up btn-secondary-dark" id="btn-final-cta-duvidas">
               <span class="slide-layer">
-                <span class="text-primary">Conversar no WhatsApp</span>
-                <span class="text-clone">Conversar no WhatsApp</span>
+                <span class="text-primary">Tirar Dúvidas com a Especialista</span>
+                <span class="text-clone">Tirar Dúvidas com a Especialista</span>
               </span>
             </a>
           </div>
@@ -791,6 +970,7 @@
           <h4>Navegação</h4>
           <ul>
             <li><a href="#procedimentos">Procedimentos</a></li>
+            <li><a href="#quiz">Diagnóstico Rápido</a></li>
             <li><a href="#diferenciais">Diferenciais</a></li>
             <li><a href="#sobre">A Clínica</a></li>
             <li><a href="#experiencia">Como Funciona</a></li>
@@ -1115,5 +1295,6 @@
 
   <!-- Scripts -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/quiz.js"></script>
 </body>
 </html>
