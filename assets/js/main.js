@@ -38,25 +38,31 @@ function initHeaderScroll() {
 ══════════════════════════════════════════ */
 function initMobileDrawer() {
   const toggleBtn = document.getElementById('menu-toggle');
+  const closeBtn = document.getElementById('drawer-close-btn');
   const drawer = document.getElementById('nav-drawer');
   const overlay = document.getElementById('nav-overlay');
-  const links = drawer ? drawer.querySelectorAll('a') : [];
+  const actionItems = drawer ? drawer.querySelectorAll('a, [data-open-booking]') : [];
 
-  if (!toggleBtn || !drawer || !overlay) return;
+  if (!drawer || !overlay) return;
 
   function openDrawer() {
-    toggleBtn.classList.add('is-active');
-    toggleBtn.setAttribute('aria-expanded', 'true');
+    if (toggleBtn) {
+      toggleBtn.classList.add('is-active');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+    }
     drawer.classList.add('is-open');
     drawer.setAttribute('aria-hidden', 'false');
     overlay.classList.add('is-active');
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    if (closeBtn) closeBtn.focus();
   }
 
   function closeDrawer() {
-    toggleBtn.classList.remove('is-active');
-    toggleBtn.setAttribute('aria-expanded', 'false');
+    if (toggleBtn) {
+      toggleBtn.classList.remove('is-active');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    }
     drawer.classList.remove('is-open');
     drawer.setAttribute('aria-hidden', 'true');
     overlay.classList.remove('is-active');
@@ -64,16 +70,22 @@ function initMobileDrawer() {
     document.body.style.overflow = '';
   }
 
-  toggleBtn.addEventListener('click', () => {
-    const isOpen = drawer.classList.contains('is-open');
-    if (isOpen) closeDrawer();
-    else openDrawer();
-  });
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = drawer.classList.contains('is-open');
+      if (isOpen) closeDrawer();
+      else openDrawer();
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeDrawer);
+  }
 
   overlay.addEventListener('click', closeDrawer);
 
-  links.forEach(link => {
-    link.addEventListener('click', () => {
+  actionItems.forEach(item => {
+    item.addEventListener('click', () => {
       closeDrawer();
     });
   });
@@ -81,6 +93,7 @@ function initMobileDrawer() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
       closeDrawer();
+      if (toggleBtn) toggleBtn.focus();
     }
   });
 }

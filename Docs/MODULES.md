@@ -10,7 +10,7 @@ Este documento descreve os módulos JavaScript, componentes visuais e regras de 
 - **Responsabilidade:** Controle de scroll do header (efeito `scrolled` com vidro fosco e sombra sutil), controle do menu mobile (abertura, fechamento, bloqueio de scroll do body e armadilha de foco acessível).
 - **Métodos:**
   - `initHeaderScroll()`: Adiciona classe `.is-scrolled` quando `window.scrollY > 24`.
-  - `initMobileDrawer()`: Gerencia eventos do botão de menu, overlay e links de navegação.
+  - `initMobileDrawer()`: Gerencia abertura, fechamento via botão de menu, botão de fechar dedicado ("X" no topo do drawer), overlay, tecla Escape e itens de ação.
 
 ### 1.2 `ScrollRevealModule` (`assets/js/main.js`)
 - **Responsabilidade:** Animação de entrada dos elementos à medida que entram na janela de visualização utilizando `IntersectionObserver`.

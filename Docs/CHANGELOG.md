@@ -4,6 +4,14 @@ Todas as mudanças relevantes no projeto são documentadas neste arquivo em orde
 
 ---
 
+## [1.1.1] - 2026-10-20
+
+### Adicionado
+- Adicionado botão "X" dedicado de fechamento (`#drawer-close-btn`) e cabeçalho institucional com o logo da clínica (`.drawer-header`) no topo do menu drawer móvel.
+- Melhorada a ergonomia de navegação no mobile com rolagem interna suave (`overflow-y: auto`), microinteração de rotação de 90° ao interagir com o botão de fechar e fechamento automático ao clicar nos botões de CTA internos.
+
+---
+
 ## [1.1.0] - 2026-10-19
 
 ### Adicionado
