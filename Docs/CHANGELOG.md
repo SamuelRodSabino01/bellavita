@@ -6,6 +6,9 @@ Todas as mudanças relevantes no projeto são documentadas neste arquivo em orde
 
 ## [1.1.3] - 2026-10-20
 
+### Adicionado
+- Adicionada a assinatura institucional do desenvolvedor (*"Desenvolvido por SamuelRodSabino"*) no rodapé da página (`.footer-bottom`), com a sílaba central *"Rod"* em destaque cromático na tonalidade rosé oficial (`var(--color-rosa-queimado)`), link externo para `https://samuelrodsabino.vercel.app/` e quebra responsiva limpa para telas móveis.
+
 ### Alterado
 - Otimizado o layout responsivo da seção **Hero** para tablets e dispositivos intermediários (`@media (max-width: 991px)`):
   - Centralização harmoniosa do conteúdo textual (`.hero-content`), posicionando o eyebrow, a headline editorial *Cormorant Garamond* e o parágrafo explicativo (`max-width: 580px`) no eixo central da tela, eliminando o espaço vazio assimétrico à direita observado no tablet (iPad Mini e similares).
