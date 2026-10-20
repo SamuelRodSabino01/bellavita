@@ -657,6 +657,64 @@ button, input, textarea, select {
   color: var(--color-muted-taupe);
 }
 
+/* ── AJUSTE RESPONSIVO HERO (TABLET E TELAS ATÉ 991px) ── */
+@media (max-width: 991px) {
+  .section-hero {
+    padding-top: clamp(96px, 13vh, 120px);
+    padding-bottom: clamp(40px, 6vh, 60px);
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-content .eyebrow {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-content .display-hero {
+    text-align: center;
+  }
+
+  .hero-content .body-lead {
+    text-align: center;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-visual {
+    width: 100%;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-actions .btn-slide-up {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* ── METADATA GRID BAR (Skill high-craft-ui) ── */
 .metadata-grid-bar {
   margin-top: clamp(40px, 6vh, 80px);
