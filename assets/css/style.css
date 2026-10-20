@@ -1638,64 +1638,103 @@ button, input, textarea, select {
   transform: translateY(0) scale(1);
 }
 
+/* Modal Top Bar (Indicador de Etapa e Botão Fechar) */
+.modal-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.modal-step-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.step-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--color-rose-claro);
+  color: var(--color-rosa-deep);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.step-badge-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-warm-ink);
+}
+
 .modal-close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 36px;
-  height: 36px;
+  position: static;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: rgba(31, 26, 28, 0.06);
+  background: rgba(31, 26, 28, 0.05);
+  border: 1px solid var(--color-border-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   color: var(--color-warm-ink);
-  transition: background var(--transition-fast), transform var(--transition-fast);
+  flex-shrink: 0;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
 }
 
-.modal-close-btn:hover {
-  background: rgba(31, 26, 28, 0.12);
+.modal-close-btn:hover,
+.modal-close-btn:focus-visible {
+  background: var(--color-rose-claro);
+  border-color: var(--color-rosa-queimado);
+  color: var(--color-rosa-deep);
   transform: rotate(90deg);
+  outline: none;
 }
 
 /* Stepper Track */
 .stepper-progress {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   position: relative;
+  width: 100%;
 }
 
-.stepper-progress::before {
-  content: '';
+.stepper-track-bg {
   position: absolute;
-  top: 15px;
-  left: 20px;
-  right: 20px;
+  top: 16px;
+  left: 12.5%;
+  right: 12.5%;
   height: 2px;
   background: var(--color-border-subtle);
   z-index: 1;
 }
 
 .stepper-bar-fill {
-  position: absolute;
-  top: 15px;
-  left: 20px;
-  height: 2px;
-  background: var(--color-rosa-queimado);
-  z-index: 2;
-  transition: width var(--transition-base);
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-rose), var(--color-rosa-queimado));
+  transition: width 0.4s var(--ease-framer);
 }
 
 .step-node {
   position: relative;
   z-index: 3;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  text-align: center;
 }
 
 .step-dot {
@@ -1717,7 +1756,7 @@ button, input, textarea, select {
   border-color: var(--color-rosa-queimado);
   background: var(--color-rosa-queimado);
   color: var(--color-branco);
-  box-shadow: 0 0 12px rgba(217, 140, 150, 0.4);
+  box-shadow: 0 0 12px rgba(217, 140, 150, 0.45);
 }
 
 .step-node.is-completed .step-dot {
@@ -1727,15 +1766,34 @@ button, input, textarea, select {
 }
 
 .step-label {
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
   color: var(--color-muted-taupe);
+  transition: color var(--transition-fast);
+  white-space: nowrap;
 }
 
 .step-node.is-active .step-label {
   color: var(--color-warm-ink);
+}
+
+.step-node.is-completed .step-label {
+  color: var(--color-rosa-queimado);
+}
+
+@media (max-width: 580px) {
+  .step-label {
+    display: none;
+  }
+
+  .stepper-progress {
+    margin-bottom: 22px;
+  }
+
+  .booking-modal-container {
+    padding: 20px 16px;
+  }
 }
 
 /* Step Panels */

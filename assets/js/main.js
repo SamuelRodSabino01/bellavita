@@ -254,9 +254,17 @@ function initBookingModal() {
     }
   });
 
+  const STEP_TITLES = ['Procedimento', 'Data & Horário', 'Seus Dados', 'Confirmação'];
+
   // Atualizar visual do Stepper
   function setStep(newStep) {
     state.step = newStep;
+
+    // Atualizar Indicador de Etapa Superior
+    const activeStepNum = overlay.querySelector('#active-step-num');
+    const activeStepTitle = overlay.querySelector('#active-step-title');
+    if (activeStepNum) activeStepNum.textContent = newStep;
+    if (activeStepTitle) activeStepTitle.textContent = STEP_TITLES[newStep - 1] || '';
 
     // Atualizar Nodes
     stepNodes.forEach((node, idx) => {
@@ -269,10 +277,10 @@ function initBookingModal() {
       }
     });
 
-    // Atualizar Bar Fill
+    // Atualizar Bar Fill (cobre exatamente de centro a centro entre os nós conectados)
     if (barFill) {
       const progressPercent = ((newStep - 1) / (stepNodes.length - 1)) * 100;
-      barFill.style.width = `calc(${progressPercent}% * 0.85)`;
+      barFill.style.width = `${progressPercent}%`;
     }
 
     // Painéis

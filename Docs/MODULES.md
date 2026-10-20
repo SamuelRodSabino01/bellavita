@@ -30,6 +30,8 @@ Este documento descreve os módulos JavaScript, componentes visuais e regras de 
 
 ### 1.4 `BookingStepperModule` (`assets/js/main.js`)
 - **Responsabilidade:** Gestor de agendamento em 4 etapas (Modal / Drawer de Luxo integrado):
+  - **Barra Superior (`.modal-top-bar`):** Indicador dinâmico de etapa ativa com pill badge (`Etapa X de 4 · [Nome]`) e botão de fechar dedicado posicionado sem sobreposição.
+  - **Trilha de Progresso (`.stepper-progress`):** 4 nós distribuídos uniformemente com barra de preenchimento conectando os centros dos círculos (`12.5%` a `87.5%`), adaptando-se a telas mobile sem colisão de textos.
   - **Passo 1: Procedimento:** Seleção de card com feedback visual imediato e registro do tempo de sessão estimado.
   - **Passo 2: Data & Horário:** Seletor de dias dos próximos 7 dias úteis + grade de horários disponíveis dinâmicos.
   - **Passo 3: Dados Pessoais:** Validação em tempo real de Nome Completo, WhatsApp com máscara `(00) 00000-0000`, e-mail e notas clínicas adicionais.

@@ -4,6 +4,16 @@ Todas as mudanças relevantes no projeto são documentadas neste arquivo em orde
 
 ---
 
+## [1.1.2] - 2026-10-20
+
+### Corrigido
+- Corrigido o layout quebrado do stepper de agendamento em telas menores/responsivas:
+  - Criação da `.modal-top-bar` integrando o indicador dinâmico da etapa atual (`Etapa X de 4 · [Nome]`) e o botão de fechar (`#booking-modal-close`), eliminando a sobreposição do botão "X" sobre a etapa 4 ("✦ Confirmação").
+  - Alinhamento perfeitamente simétrico dos 4 nós do stepper (`flex: 1`) e conexão geométrica da barra de progresso (`.stepper-track-bg` de 12.5% a 87.5%), corrigindo o espaçamento desigual entre círculos.
+  - Otimização para telas mobile (`<= 580px`): ocultação dos rótulos de texto longos abaixo dos círculos para evitar quebra de linha e colisão, mantendo o nome da etapa legível na barra superior.
+
+---
+
 ## [1.1.1] - 2026-10-20
 
 ### Adicionado

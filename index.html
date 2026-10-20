@@ -1048,13 +1048,26 @@
   >
     <div class="booking-modal-container">
 
-      <button type="button" class="modal-close-btn" id="booking-modal-close" aria-label="Fechar janela">
-        ✕
-      </button>
+      <!-- Modal Top Bar: Indicador da Etapa Ativa e Botão Fechar -->
+      <div class="modal-top-bar">
+        <div class="modal-step-badge">
+          <span class="step-badge-pill">Etapa <span id="active-step-num">1</span> de 4</span>
+          <span class="step-badge-title" id="active-step-title">Procedimento</span>
+        </div>
 
-      <!-- Stepper Header -->
+        <button type="button" class="modal-close-btn" id="booking-modal-close" aria-label="Fechar janela">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Stepper Progress Track -->
       <div class="stepper-progress" role="navigation" aria-label="Progresso do agendamento">
-        <div class="stepper-bar-fill"></div>
+        <div class="stepper-track-bg">
+          <div class="stepper-bar-fill"></div>
+        </div>
 
         <div class="step-node is-active" data-step-indicator="1">
           <div class="step-dot">1</div>
